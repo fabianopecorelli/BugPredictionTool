@@ -1,6 +1,6 @@
 <?php include_once "header.php" ?>
 <!-- top navigation -->
-<div class="top_nav">
+<!--<div class="top_nav">
     <div class="nav_menu">
         <nav>
             <div class="nav toggle">
@@ -15,7 +15,7 @@
             </ul>
         </nav>
     </div>
-</div>
+</div>-->
 <!-- /top navigation -->
 <!-- page content -->
 <div class="right_col" role="main">
@@ -104,13 +104,13 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+<!--                                <div class="col-md-3">
                                     <div class="checkbox">
                                         <label class="">
                                             <input type="checkbox" name="metrics" value="Metrica 4" required="required" class="flat" checked="checked"> Metrica 4
                                         </label>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                         <div class="ln_solid"></div>

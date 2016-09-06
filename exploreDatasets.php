@@ -1,6 +1,6 @@
 <?php include_once "header.php" ?>
 <!-- top navigation -->
-<div class="top_nav">
+<!--<div class="top_nav">
     <div class="nav_menu">
         <nav>
             <div class="nav toggle">
@@ -15,7 +15,7 @@
             </ul>
         </nav>
     </div>
-</div>
+</div>-->
 <!-- /top navigation -->
 <!-- page content -->
 <div class="right_col" role="main">
@@ -580,7 +580,7 @@
             'columnDefs': [
                 {orderable: false, targets: [2,3]}
             ],
-            'iDisplayLength': 50,
+            'iDisplayLength': 10,
         });
 
         $('#datatable-keytable').DataTable({

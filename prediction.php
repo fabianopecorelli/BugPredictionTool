@@ -50,7 +50,32 @@
                         </ul>
                         <div id="myTabContent2" class="tab-content">
                             <div role="tabpanel" class="tab-pane fade active in" id="summary" aria-labelledby="home-tab">
-                                <p>Qui verranno mostrati i risultati in qualche modo</p>
+                                <div class="col-md-12 col-sm-6 col-xs-12">
+                                    <div class="x_panel">
+                                        <div class="x_title">
+                                            <h2>Bar Chart Group <small>Sessions</small></h2>
+                                            <ul class="nav navbar-right panel_toolbox">
+                                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#">Settings 1</a>
+                                                        </li>
+                                                        <li><a href="#">Settings 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                                </li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content2">
+                                            <div id="graphx" style="width:100%; height:300px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="x_panel">
                                         <div class="x_title">
@@ -226,10 +251,12 @@
 <script src="scripts/icheck.js"></script>
 <script src="scripts/parsleyjs/dist/parsley.js"></script>
 
+<script src="scripts/raphael.js"></script>
+<script src="scripts/morris.js"></script>
 <!-- Parsley -->
 <script>
                                 var metrics = document.getElementsByName("metric");
-                                for(var i = 0; i < metrics.length; i++)
+                                for (var i = 0; i < metrics.length; i++)
                                     metrics[i].addEventListener("click", function () {
                                         document.getElementById("newPred").style.visibility = "visible";
                                     }, true);
@@ -258,5 +285,25 @@
                                     hljs.initHighlightingOnLoad();
                                 } catch (err) {
                                 }
+                                $(document).ready(function () {
+                                    Morris.Bar({
+                                        element: 'graphx',
+                                        data: [
+                                            {x: 'accuracy', y: 2, z: 3, a: 4, b:6},
+                                            {x: 'precision', y: 3, z: 5, a: 6, b:6},
+                                            {x: 'recall', y: 4, z: 3, a: 2, b:6},
+                                            {x: 'fmeasure', y: 2, z: 4, a: 5, b:6},
+                                            {x: 'areaUnderROC', y: 2, z: 4, a: 5, b:6}
+                                        ],
+                                        xkey: 'x',
+                                        ykeys: ['y', 'z', 'a', 'b'],
+                                        barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+                                        hideHover: 'auto',
+                                        labels: ['Y', 'Z', 'A', 'B'],
+                                        resize: true,
+                                    }).on('click', function (i, row) {
+                                        console.log(i, row);
+                                    });
+                                })
 </script>
 <!-- /Parsley -->
